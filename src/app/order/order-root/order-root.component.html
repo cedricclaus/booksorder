@@ -40,11 +40,11 @@
 
   <h2>Ajout manuel</h2>
   <form>
-    <label>Titre    <input></label>
-    <label>Auteur   <input></label>
-    <label>Prix     <input></label>
-    <label>Quantité <input></label>
-    <input type="submit" value="Ajouter">
+    <label>Titre    <input type="text" [(ngModel)]="manualForm.title" name = "title"></label>
+    <label>Auteur   <input type="text" [(ngModel)]="manualForm.author" name = "author"></label>
+    <label>Prix     <input type="number" step="0.01" [(ngModel)]="manualForm.price" name = "price"></label>
+    <label>Quantité <input type="number" [(ngModel)]="manualForm.quantity"  name = "quantity"></label>
+    <input type="submit" value="Ajouter" (click)="addOderRow()">
   </form>
 
   <h2>Ajout depuis le catalogue</h2>

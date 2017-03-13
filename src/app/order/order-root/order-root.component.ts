@@ -12,6 +12,8 @@ export class OrderRootComponent implements OnInit {
   rows : OrderRow[] = [new OrderRow("Titre", "author",7.40,3),
     new OrderRow("Titre2 ", "author2 ",10.40,1)];
 
+  manualForm : OrderRow = new OrderRow();
+
   constructor() {}
 
   removeRow(row : OrderRow) :void {
@@ -28,6 +30,11 @@ export class OrderRootComponent implements OnInit {
 
   isBig(row){
     return row.ht()>=100;
+  }
+
+  addOderRow(){
+    this.rows.push(this.manualForm);
+    this.manualForm = new OrderRow();
   }
 
   ngOnInit() {
