@@ -32,7 +32,7 @@ export class OrderRootComponent implements OnInit {
     return row.ht()>=100;
   }
 
-  addOderRow(){
+  manualAdd(){
     this.rows.push(this.manualForm);
     this.manualForm = new OrderRow();
   }
