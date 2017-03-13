@@ -26,6 +26,10 @@ export class OrderRootComponent implements OnInit {
     return this.rows.map(row => row.ttc() ).reduce( ReduceUtil.total,0);
   }
 
+  isBig(row){
+    return row.ht()>=100;
+  }
+
   ngOnInit() {
   }
 
