@@ -21,7 +21,7 @@
         <!--[ngModel]="row.quantity" -->
          <!--(ngModelChange)="row.quantity = $event"-->
       </td>
-      <td class="right">???</td>
+      <td class="right" [textContent] = "row.ht() | currency:'EUR':true" >???</td>
       <td class="right">???</td>
       <td><button (click)="removeRow(row)" >Supprimer</button></td>
     </tr>

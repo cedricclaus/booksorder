@@ -7,4 +7,8 @@ export class OrderRow{
     public quantity : number
   ) {
   }
+
+  ht(){
+    return this.price * this.quantity;
+  }
 }
