@@ -11,4 +11,9 @@ export class OrderRow{
   ht(){
     return this.price * this.quantity;
   }
+
+  ttc(){
+   return  this.ht() * 1.21;
+
+  }
 }
