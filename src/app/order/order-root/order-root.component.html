@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let row of rows"
-      [ngClass]="{'big' : isBig(row)}"
+      [class.big]="isBig(row)"
     >
       <td [textContent]= "row.title"></td>
       <td [textContent]= "row.author"></td>
