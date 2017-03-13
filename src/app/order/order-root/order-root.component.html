@@ -1,3 +1,52 @@
-<p>
-  order-root works!
-</p>
+<div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Prix unitaire HT</th>
+      <th>Quantité</th>
+      <th>Montant HT</th>
+      <th>Montant TTC</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>ici le titre</td>
+      <td>ici le nom de l'auteur</td>
+      <td class="right">9,99</td>
+      <td class="right"><input></td>
+      <td class="right">???</td>
+      <td class="right">???</td>
+      <td><button >Supprimer</button></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="4">Total</td>
+      <td class="right">???</td>
+      <td class="right">???</td>
+      <td></td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <h2>Ajout manuel</h2>
+  <form>
+    <label>Titre    <input></label>
+    <label>Auteur   <input></label>
+    <label>Prix     <input></label>
+    <label>Quantité <input></label>
+    <input type="submit" value="Ajouter">
+  </form>
+
+  <h2>Ajout depuis le catalogue</h2>
+  <form>
+    <label>Livre<select></select></label>
+    <label>Quantité <input></label>
+    <input type="submit" value="Ajouter">
+  </form>
+
+</div>
