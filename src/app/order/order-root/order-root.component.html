@@ -17,7 +17,10 @@
       <td [textContent]= "row.title"></td>
       <td [textContent]= "row.author"></td>
       <td [textContent] = "row.price | currency:'EUR':true" class="right"></td>
-      <td class="right"><input></td>
+      <td class="right"><input type="number" [(ngModel)]="row.quantity">
+        <!--[ngModel]="row.quantity" -->
+         <!--(ngModelChange)="row.quantity = $event"-->
+      </td>
       <td class="right">???</td>
       <td class="right">???</td>
       <td><button (click)="removeRow(row)" >Supprimer</button></td>
@@ -50,3 +53,5 @@
   </form>
 
 </div>
+
+{{rows |json}}
