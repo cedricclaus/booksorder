@@ -48,12 +48,16 @@
   </form>
 
   <h2>Ajout depuis le catalogue</h2>
-  <form>
-    <label>Livre<select></select></label>
-    <label>Quantité <input></label>
+  <form (ngSubmit)="catalogAdd()">
+    <label>Livre
+      <select [(ngModel)]="catalogForm.selected"  name = "selected">
+        <option *ngFor="let book of books" [ngValue]="book">{{book.title}}</option>
+    </select>
+    </label>
+    <label>Quantité <input type="number" [(ngModel)]="catalogForm.quantity"  name = "quantity"></label>
     <input type="submit" value="Ajouter">
   </form>
 
 </div>
 
-{{rows |json}}
+{{catalogForm |json}}
