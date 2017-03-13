@@ -11,8 +11,10 @@ export class OrderRootComponent implements OnInit {
   rows : OrderRow[] = [new OrderRow("Titre", "author",7.40,3),
     new OrderRow("Titre2 ", "author2 ",10.40,1)];
 
-  constructor() {
+  constructor() {}
 
+  removeRow(row : OrderRow) :void {
+    this.rows = this.rows.filter(r => r != row);
   }
 
   ngOnInit() {

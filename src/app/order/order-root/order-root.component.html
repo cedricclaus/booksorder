@@ -14,13 +14,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let row of rows">
-      <td>{{row.title}}</td>
-      <td>{{row.author}}</td>
-      <td class="right">{{row.price | currency:'EUR':true}}</td>
+      <td [textContent]= "row.title"></td>
+      <td [textContent]= "row.author"></td>
+      <td [textContent] = "row.price | currency:'EUR':true" class="right"></td>
       <td class="right"><input></td>
       <td class="right">???</td>
       <td class="right">???</td>
-      <td><button >Supprimer</button></td>
+      <td><button (click)="removeRow(row)" >Supprimer</button></td>
     </tr>
     </tbody>
     <tfoot>
