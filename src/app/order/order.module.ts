@@ -6,6 +6,7 @@ import { OrderRootComponent } from './order-root/order-root.component';
   imports: [
     CommonModule
   ],
+  exports : [OrderRootComponent],
   declarations: [OrderRootComponent]
 })
 export class OrderModule { }
