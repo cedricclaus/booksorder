@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, LOCALE_ID} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -17,7 +17,7 @@ import {OrderModule} from "./order/order.module";
     HttpModule,
     OrderModule
   ],
-  providers: [],
+  providers: [{provide:LOCALE_ID, useValue:'fr-BE'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

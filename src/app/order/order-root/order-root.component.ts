@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderRow} from "../order-row.model";
 
 @Component({
   selector: 'app-order-root',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderRootComponent implements OnInit {
 
-  constructor() { }
+  rows : OrderRow[] = [new OrderRow("Titre", "author",7.40,3),
+    new OrderRow("Titre2 ", "author2 ",10.40,1)];
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

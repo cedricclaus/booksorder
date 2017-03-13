@@ -13,10 +13,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>ici le titre</td>
-      <td>ici le nom de l'auteur</td>
-      <td class="right">9,99</td>
+    <tr *ngFor="let row of rows">
+      <td>{{row.title}}</td>
+      <td>{{row.author}}</td>
+      <td class="right">{{row.price | currency:'EUR':true}}</td>
       <td class="right"><input></td>
       <td class="right">???</td>
       <td class="right">???</td>
