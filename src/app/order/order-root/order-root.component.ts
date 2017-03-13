@@ -17,6 +17,14 @@ export class OrderRootComponent implements OnInit {
     this.rows = this.rows.filter(r => r != row);
   }
 
+  totalHT(){
+    return this.rows.map(row => row.ht() ).reduce( (total , row) => {return total + row});
+  }
+
+  totalTTC(){
+    return this.rows.map(row => row.ttc() ).reduce( (total , row) => {return total + row});
+  }
+
   ngOnInit() {
   }
 
