@@ -13,11 +13,12 @@ import {Subscription} from "rxjs";
 })
 export class OrderRootComponent implements OnInit,OnDestroy {
 
-
   rows : OrderRow[] = [new OrderRow("Titre", "author",7.40,3),
     new OrderRow("Titre2 ", "author2 ",10.40,1)];
 
+
   manualForm : OrderRow = new OrderRow();
+
   catalogForm : {
     selected? : Book,
     quantity? : number
@@ -43,17 +44,7 @@ export class OrderRootComponent implements OnInit,OnDestroy {
     this.rows = this.rows.filter(r => r != row);
   }
 
-  totalHT(){
-    return this.rows.map(row => row.ht() ).reduce( ReduceUtil.total,0);
-  }
 
-  totalTTC(){
-    return this.rows.map(row => row.ttc() ).reduce( ReduceUtil.total,0);
-  }
-
-  isBig(row){
-    return row.ht()>=100;
-  }
 
   manualAdd(){
     this.rows.push(this.manualForm);

@@ -1,3 +1,37 @@
-<p>
-  order-rows works!
-</p>
+<table>
+  <thead>
+  <tr>
+    <th>Titre</th>
+    <th>Auteur</th>
+    <th>Prix unitaire HT</th>
+    <th>Quantité</th>
+    <th>Montant HT</th>
+    <th>Montant TTC</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows"
+      [class.big]="isBig(row)"
+  >
+    <td [textContent]= "row.title"></td>
+    <td [textContent]= "row.author"></td>
+    <td [textContent] = "row.price | currency:'EUR':true" class="right"></td>
+    <td class="right"><input type="number" [(ngModel)]="row.quantity">
+      <!--[ngModel]="row.quantity" -->
+      <!--(ngModelChange)="row.quantity = $event"-->
+    </td>
+    <td class="right" [textContent] = "row.ht() | currency:'EUR':true"></td>
+    <td class="right" [textContent] = "row.ttc() | currency:'EUR':true"></td>
+    <td><button (click)="emitRemove(row)" >Supprimer</button></td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">Total</td>
+    <td class="right" [textContent] = "totalHT() | currency:'EUR':true">???</td>
+    <td class="right" [textContent] = "totalTTC() | currency:'EUR':true">???</td>
+    <td></td>
+  </tr>
+  </tfoot>
+</table>
