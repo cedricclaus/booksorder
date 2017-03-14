@@ -1,5 +1,5 @@
 <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
-<h2>Ajout manuel</h2>
-<app-order-manual-form (add)="addRow($event)"></app-order-manual-form>
-<h2>Ajout depuis le catalogue</h2>
-<app-order-catalog-form [books]="books" (add)="addRow($event)"></app-order-catalog-form>
+
+<app-order-catalog-form [books]="books" (add)="addRow($event)" *ngIf="!manual"></app-order-catalog-form>
+<h2><input type="checkbox" [(ngModel)] = "manual"> Ajout manuel</h2>
+<app-order-manual-form (add)="addRow($event)" *ngIf="manual"></app-order-manual-form>

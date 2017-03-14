@@ -16,6 +16,7 @@ export class OrderRootComponent implements OnInit,OnDestroy {
   rows : OrderRow[] = [new OrderRow("Titre", "author",7.40,3),
     new OrderRow("Titre2 ", "author2 ",10.40,1)];
 
+  manual : boolean;
 
   books : Book[];
   subscription : Subscription;
