@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {OrderRow} from "../order-row.model";
 
 @Component({
   selector: 'app-order-manual-form',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderManualFormComponent implements OnInit {
 
+  manualForm : OrderRow = new OrderRow();
+
+  @Output("add") addEmitter = new EventEmitter<OrderRow>();
+
   constructor() { }
+
+  emitAdd(){
+    this.addEmitter.emit(this.manualForm);
+    this.manualForm = new OrderRow();
+  }
 
   ngOnInit() {
   }

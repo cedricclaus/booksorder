@@ -17,7 +17,7 @@ export class OrderRootComponent implements OnInit,OnDestroy {
     new OrderRow("Titre2 ", "author2 ",10.40,1)];
 
 
-  manualForm : OrderRow = new OrderRow();
+
 
   catalogForm : {
     selected? : Book,
@@ -45,10 +45,8 @@ export class OrderRootComponent implements OnInit,OnDestroy {
   }
 
 
-
-  manualAdd(){
-    this.rows.push(this.manualForm);
-    this.manualForm = new OrderRow();
+  addRow(order:OrderRow){
+    this.rows.push(order);
   }
 
   catalogAdd(){

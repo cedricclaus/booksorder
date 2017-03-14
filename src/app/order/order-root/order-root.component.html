@@ -1,19 +1,13 @@
 <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
-<app-order-manual-form></app-order-manual-form>
+<h2>Ajout manuel</h2>
+<app-order-manual-form (add)="addRow($event)"></app-order-manual-form>
 <app-order-catalog-form></app-order-catalog-form>
 
 <div>
 
 
 
-  <h2>Ajout manuel</h2>
-  <form (ngSubmit)="manualAdd()" >
-    <label>Titre    <input type="text" [(ngModel)]="manualForm.title" name = "title"></label>
-    <label>Auteur   <input type="text" [(ngModel)]="manualForm.author" name = "author"></label>
-    <label>Prix     <input type="number" step="0.01" [(ngModel)]="manualForm.price" name = "price"></label>
-    <label>Quantité <input type="number" [(ngModel)]="manualForm.quantity"  name = "quantity"></label>
-    <input type="submit" value="Ajouter" >
-  </form>
+
 
   <h2>Ajout depuis le catalogue</h2>
   <form (ngSubmit)="catalogAdd()">
