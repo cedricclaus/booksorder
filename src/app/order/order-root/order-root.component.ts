@@ -61,7 +61,11 @@ export class OrderRootComponent implements OnInit,OnDestroy {
   }
 
   catalogAdd(){
-    this.rows.push(new OrderRow(this.catalogForm.selected.title,this.catalogForm.selected.author,this.catalogForm.selected.price,this.catalogForm.quantity))
+    this.rows.push(new OrderRow(
+      this.catalogForm.selected.title,
+      this.catalogForm.selected.author,
+      this.catalogForm.selected.price,
+      this.catalogForm.quantity || 1))
     this.catalogForm = {};
 
   }
