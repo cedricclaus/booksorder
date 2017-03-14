@@ -1,25 +1,5 @@
 <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
 <h2>Ajout manuel</h2>
 <app-order-manual-form (add)="addRow($event)"></app-order-manual-form>
-<app-order-catalog-form></app-order-catalog-form>
-
-<div>
-
-
-
-
-
-  <h2>Ajout depuis le catalogue</h2>
-  <form (ngSubmit)="catalogAdd()">
-    <label>Livre
-      <select [(ngModel)]="catalogForm.selected"  name = "selected">
-        <option *ngFor="let book of books" [ngValue]="book">{{book.title}}</option>
-    </select>
-    </label>
-    <label>Quantité <input type="number" [(ngModel)]="catalogForm.quantity"  name = "quantity"></label>
-    <input type="submit" value="Ajouter">
-  </form>
-
-</div>
-
-{{catalogForm |json}}
+<h2>Ajout depuis le catalogue</h2>
+<app-order-catalog-form [books]="books" (add)="addRow($event)"></app-order-catalog-form>

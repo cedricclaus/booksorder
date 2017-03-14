@@ -1,3 +1,9 @@
-<p>
-  order-catalog-form works!
-</p>
+<form (ngSubmit)="emitOrderRow()">
+  <label>Livre
+    <select [(ngModel)]="catalogForm.selected"  name = "selected">
+      <option *ngFor="let book of books" [ngValue]="book">{{book.title}}</option>
+    </select>
+  </label>
+  <label>Quantité <input type="number" [(ngModel)]="catalogForm.quantity"  name = "quantity"></label>
+  <input type="submit" value="Ajouter">
+</form>
