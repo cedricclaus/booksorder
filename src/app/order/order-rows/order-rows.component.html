@@ -13,17 +13,18 @@
   <tbody>
   <tr *ngFor="let row of rows"
       [class.big]="isBig(row)"
+      class="order-row"
   >
-    <td [textContent]= "row.title"></td>
-    <td [textContent]= "row.author"></td>
-    <td [textContent] = "row.price | currency:'EUR':true" class="right"></td>
-    <td class="right"><input type="number" [(ngModel)]="row.quantity">
+    <td [textContent]= "row.title" class="order-title"></td>
+    <td [textContent]= "row.author" class="order-author"></td>
+    <td [textContent] = "row.price | currency:'EUR':true" class="right" class="order-price"></td>
+    <td class="right" class="order-quantity"><input type="number" [(ngModel)]="row.quantity">
       <!--[ngModel]="row.quantity" -->
       <!--(ngModelChange)="row.quantity = $event"-->
     </td>
-    <td class="right" [textContent] = "row.ht() | currency:'EUR':true"></td>
-    <td class="right" [textContent] = "row.ttc() | currency:'EUR':true"></td>
-    <td><button (click)="emitRemove(row)" >Supprimer</button></td>
+    <td class="right" [textContent] = "row.ht() | currency:'EUR':true" class="order-ht"></td>
+    <td class="right" [textContent] = "row.ttc() | currency:'EUR':true" class="order-ttc"></td>
+    <td class="order-remove"><button (click)="emitRemove(row)" >Supprimer</button></td>
   </tr>
   </tbody>
   <tfoot>
